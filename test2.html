@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		.circle {
+			height: 80px;
+			width: 80px;
+			background: red;
+			position: absolute;
+			border-radius: 100px;
+			transition: 1s;
+
+		}
+		.circl {
+			height: 80px;
+			width: 80px;
+			background: red;
+			position: absolute;
+			border-radius: 100px;
+			transition: 1s;
+
+		}
+		.circli {
+			height: 80px;
+			width: 80px;
+			background: red;
+			position: absolute;
+			border-radius: 100px;
+			transition: 1s;
+
+		}
+		.dimondl{
+			height: 80px;
+			width: 80px;
+			background: red;
+			position: absolute;
+			border-radius: 100px;
+			transition: 1s;
+
+		}
+		.dimondt{
+			height: 80px;
+			width: 80px;
+			background: red;
+			position: absolute;
+			border-radius: 100px;
+			transition: 1s;
+
+		}
+		.boom{
+
+		}
+	</style>
+	
+</head>
+<body style="background-image: url(sait.jpg);background-size: 100%;">
+<div class="boom">
+<h4 style="color: white;">очки:<span class="score"></span></h4>
+<p style="font-family: arial;color: white;">у тебя 11 секунд чтобы найти 2 алмаза!</p>
+
+	<div class="circle" style="left: 920px; top: 190px;background-image: url(poop.jpg);background-size: 100%100%;"></div>
+	<div class="circle" style="left: 890px; top: 350px;background-image: url(poop.jpg);background-size: 100%100%;"></div>
+	<div class="dimondl" style="left: 550px; top: 590px;background-image: url(dimond.jpg);background-size: 100%100%;"></div>
+	<div class="circle" style="left: 130px; top: 450px;background-image: url(poop.jpg);background-size: 100%100%;"></div>
+
+	<div class="circl" style="left: 260px; top: 400px;background-image: url(poop.jpg);background-size: 100%100%;"></div>
+	<div class="dimondt" style="left: 450px; top: 400px;background-image: url(dimond.jpg);background-size: 100%100%;"></div>
+	<div class="circl" style="left: 760px; top: 400px;background-image: url(poop.jpg);background-size: 100%100%;"></div>
+	<div class="circl" style="left: 540px; top: 400px;background-image: url(poop.jpg);background-size: 100%100%;"></div>
+
+	<div class="circli" style="left: 990px;  top: 100px;background-image: url(poop.jpg);background-size: 100%100%;"></div>
+	<div class="circli" style="left: 900px; top: 100px;background-image: url(poop.jpg);background-size: 100%100%;"></div>
+	<div class="circli" style="left: 200px; top: 100px;background-image: url(poop.jpg);background-size: 100%100%;"></div>
+	<div class="circli" style="left: 550px; top: 100px;background-image: url(poop.jpg);background-size: 100%100%;"></div>
+
+</div>
+
+
+	
+<script type="text/javascript">
+
+	function endGame() {
+		if (score < 2) {
+     document.querySelector('.boom').style.display="none";
+     alert("you died...")
+		}
+
+		if (score==2) {
+			document.querySelector('.boom').style.display="none"
+			alert("you win yoohoo!")
+		}
+	}
+
+  let circle=document.querySelectorAll('.circle');
+  let circl=document.querySelectorAll('.circl');
+  let circli=document.querySelectorAll('.circli');
+  let dimondl=document.querySelector('.dimondl')
+  let dimondt=document.querySelector('.dimondt')
+  let score=0
+  document.querySelector('.score').innerHTML = score
+
+  	dimondl.onclick=function () {
+  		score=score+1
+  		document.querySelector('.score').innerHTML=score
+  		alert("you find a diamond!!")
+  		dimondl.style.display="none"
+
+  	}
+  
+  
+  	dimondt.onclick=function () {
+  		score=score+1
+  		document.querySelector('.score').innerHTML=score
+  		alert("you find a diamond!!")
+  		dimondt.style.display="none"
+  		
+  	}
+  
+  for (let i=0; i<3; i=i+1) {
+  	circl[i].onclick=function () {
+  		alert("oh no its a poop..")
+  	}
+  }
+  for (let i=0; i<3; i=i+1) {
+  	circle[i].onclick=function () {
+  		alert("oh no its a poop..")
+  	}
+  }
+  for (let i =0; i < 4; i=i+1) {
+  	circli[i].onclick=function () {
+  		alert("oh no its a poop..")
+  	}
+  }
+
+let Leftnum=1000;
+  let numt=400;
+  let mnum=100;
+
+  	 let moveLeft=function () {
+  	Leftnum=Leftnum-50
+  	for (let i = 0; i < 3; i=i+1) {
+	circle[i].style.left=Leftnum+"px"
+	circle[i].style.background="white"
+	circle[i].style.transition="1.5s"
+
+	
+}
+  }
+  let moveLeftd=function () {
+  	Leftnum=Leftnum-50
+
+	dimondl.style.left=Leftnum+"px"
+	dimondl.style.background="white"
+	dimondl.style.transition="1.5s"
+
+	
+}
+  
+  let moveTop=function () {
+  	numt=numt-50
+  	for (let i = 0; i < 3; i=i+1) {
+	circl[i].style.top=numt+"px"
+	circl[i].style.background="white"
+	circl[i].style.transition="1.5s"
+	
+}
+  }
+
+  let moveTopd=function () {
+  	numt=numt-50
+
+	dimondt.style.top=numt+"px"
+	dimondt.style.background="white"
+	dimondt.style.transition="1.5s"
+	
+}
+  
+
+  let moveBottom=function () {
+  	mnum=mnum+50
+  	for (let i = 0; i < 4; i=i+1) {
+	circli[i].style.top=mnum+"px"
+	circli[i].style.background="white"
+	circli[i].style.transition="1.5s"
+
+}
+  }
+  
+
+  
+ 
+  
+  function startGame() {
+  	setInterval(moveLeft,1000);
+  	setInterval(moveLeftd,1000);
+    setInterval(moveTop,1000);
+    setInterval(moveTopd,1000);
+    setInterval(moveBottom,1000);
+    setTimeout(endGame,11000);
+  }
+  setTimeout(startGame,2000);
+
+
+
+</script>
+</body>
+</html>
